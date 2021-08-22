@@ -19,8 +19,11 @@ for table in tables:
     section_dict = dict(zip(command_keys, command_names))
     command_values.update(section_dict)
 
+headlines = soup.select(".mw-headline")
+
 with open("all_commands.py", "w") as f:
     f.write("# File containing all commands.\n")
-    f.write(f"commands = {pformat(command_values)}")
+    f.write(f"commands = {pformat(command_values)}\n\n")
+    f.write(f"headlines = {pformat(headlines)}")
 
 print("Done")
