@@ -31,12 +31,14 @@ class Main:
                 listener.join()
             
             print(self.pressed)
-            valid = [{command, text} for command, text in self.com.items() if command.startswith(self.pressed.upper())]
+            valid = [{command: text} for command, text in self.com.items() if command.startswith(self.pressed.upper())]
 
             if not valid: return False
             if len(valid) == 1: return True
 
-            pprint(valid)
+            for pair in valid:
+                for k, v in pair.items():
+                    print(f"{k}: {v}")
 
     def send_message(self):
         message = self.com[self.pressed.upper()]
