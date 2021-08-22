@@ -1,9 +1,8 @@
 # File to handle EVERYTHING
 import keyboard
-from all_commands import commands
+from all_commands import commands, headlines
 from os import system
 from pynput.keyboard import Listener
-from pprint import pprint
 from time import sleep
 
 class Main:
@@ -26,6 +25,7 @@ class Main:
 
     def track_input(self):
         self.pressed += "V"
+        print("\n".join(headlines))
         while True:
             with Listener(on_press=self.on_press) as listener:
                 listener.join()
