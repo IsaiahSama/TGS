@@ -31,7 +31,7 @@ class Main:
                 listener.join()
             
             print(self.pressed)
-            valid = [{command, text} for command, text in self.com.items() if self.pressed.upper() in command]
+            valid = [{command, text} for command, text in self.com.items() if command.startswith(self.pressed.upper())]
 
             if not valid: return False
             if len(valid) == 1: return True
