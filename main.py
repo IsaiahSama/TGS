@@ -1,9 +1,14 @@
 # File to handle EVERYTHING
-import keyboard
-from all_commands import commands, headlines
-from os import system
-from pynput.keyboard import Listener
-from time import sleep
+try:
+    import keyboard
+    from all_commands import commands, headlines
+    from os import system
+    from pynput.keyboard import Listener
+    from time import sleep
+except ImportError:
+    print("Some modules are missing. Please visit the github page: https://github.com/IsaiahSama/TGS#readme and download the `requirements.txt` file. Then refer to: https://note.nkmk.me/en/python-pip-install-requirements/ to get setup")
+    input("Press enter:")
+    exit()
 
 class Main:
     def __init__(self, commands:dict) -> None:
