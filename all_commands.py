@@ -163,5 +163,5 @@ headlines = ['List of all Voice Commands',
  'R - Retreat',
  'S - Self',
  'T - Returned',
- 'V - Other',
- 'X - Social Emotes']
+ 'V - Other']
+ # Left out social emotes
