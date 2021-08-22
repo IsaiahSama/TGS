@@ -20,6 +20,7 @@ for table in tables:
     command_values.update(section_dict)
 
 headlines = soup.select(".mw-headline")
+headlines = [headline.text for headline in headlines]
 
 with open("all_commands.py", "w") as f:
     f.write("# File containing all commands.\n")
